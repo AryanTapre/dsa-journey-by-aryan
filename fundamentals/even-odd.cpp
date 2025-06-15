@@ -1,5 +1,5 @@
 // Program to check Number is EVEN or ODD
-#include<iostream>
+#include <iostream>
 using namespace std; 
 
 // Function to check even 
@@ -11,6 +11,7 @@ bool isEven(const int number) {
 }
 
 int main() { 
+
     int num;
 
     cout << "enter the number:";
