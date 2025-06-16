@@ -8,6 +8,10 @@ void print(int x) {
 
 int main() { 
 
+    int data = 1;
+    data = data<<2;
+    cout << "data : "<<data << '\n';
+    
     static_cast<int>(5.5);
     print('A');
 
