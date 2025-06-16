@@ -1,29 +1,36 @@
-// Prpgram to check number is Prime?
-#include<iostream>
+#include <iostream>
 using namespace std; 
 
-// Function to check Prime Number
+/**
+ * @brief Check if a number is prime.
+ * 
+ * @param inputnum Number to be tested
+ * @return true If number is prime
+ * @return false If number is not prime
+ */
 bool isPrime(const int inputNum) {
-    bool primeStatus = true; // Initial Value is False
-    
-    for (int number = 2; number <= inputNum - 1; number++) {
+    if (inputNum < 2) return false;
+
+    for (int number = 2; number * number <= inputNum; ++number) { // O(root N) time complexity
         if (inputNum % number == 0) {
-            primeStatus = false;
-            break;
+            return false;
         }
     }
-    
-    return primeStatus;
+    return true;
 }
 
 int main() { 
     int inputNum;
-
-    cout << "enter the number : ";
+    cout << "Enter the number: ";
     cin >> inputNum;
 
-    cout << boolalpha;
-    cout << "number is prime: " << isPrime(inputNum) <<'\n';
+    if (cin.fail()) {
+        cerr << "Invalid input. Please enter an integer.\n";
+        return 1;
+    }
 
+    cout << boolalpha; // Print true/false instead of 1/0
+    cout << "Number is prime: " << isPrime(inputNum) << '\n';
+    
     return 0;
 }
