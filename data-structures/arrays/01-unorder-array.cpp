@@ -8,42 +8,76 @@
 #include <iostream>
 using namespace std; 
 
-
-/*  Algorithm:
-    Size: no. of elements currently array is holding
-    Capacity: maximum no. of elements that array can hold.
-
- *  1. check if there is enough room? if No, return true, if Yes move ahead   
-    2. If size is Zero ( array is empty ), insert element at 0th index.
-    3. If position of newValue is last element of array,if (position == size) then insert at end
-    4. If position of newValue is in middle of array
-       If (index < size) 
-          move arr[position] at the end arr[size]
-          copy arr[position] = newValue 
-    5. increase size by 1
-    
+/**
+ * @brief Inserts a new value into a fixed-capacity array at the specified position.
+ * 
+ * This function supports inserting into an empty array, appending at the end,
+ * or placing a value at a middle index by shifting a single element to the end.
+ * 
+ * @param array The array where the new value will be inserted.
+ * @param currentSize Reference to the current number of elements in the array. This will be incremented on successful insert. Technically always represents next index.
+ * @param capacity The maximum number of elements the array can hold.
+ * @param newValue The value to be inserted into the array.
+ * @param position The index at which the new value should be inserted.
+ *                Must satisfy: 0 ≤ position ≤ currentSize.
+ * 
+ * @return true if the value was successfully inserted;
+ *         false if the array is full or the position is invalid.
+ *
+ * @note This function assumes that the array has enough space allocated to hold up to `capacity` elements.
+ *       If inserting in the middle, the current element at `position` is pushed to the end of the array
+ *       without shifting all subsequent elements.
  */
-bool insert(int arr[], int& size, const int capacity, int newValue, int position) {
-    if (size == capacity) { // No room to insert.
-        return false;
+
+bool insertIntoArray(int array[], size_t& currentSize, size_t capacity, int newValue, size_t position) {
+    // Capacity check
+    if (currentSize >= capacity ) {
+        return false; // Array is full
     }
 
-    if (size == 0) { // Array is empty.
-        arr[0] = newValue;        
-
-    } else if (position == size) { // Insert at end.
-        arr[size] = newValue;
-
-    } else { // Somewhere in middle of array. if (index < size)
-        arr[size] = arr[position]; 
-        arr[position] = newValue;
+    // Position validation
+    if (position > currentSize) {
+        return false; // Invalid insert position
     }
-    ++size;
+
+    // Checking the valid position to insert
+    if (currentSize == 0) {
+        array[0] = newValue;  // Array is empty, insert newValue at 0th index
+
+    } else if (position == currentSize) { 
+        array[currentSize] = newValue; // insert newValue at the end of array
+
+    } else { // Somewhere in middle of array, if position < currentSize 
+        array[currentSize] = array[position];  // Copy array[position] to array[currentSize]
+        array[position] = newValue;  // insert newValue to array[position]
+    }
+
+    ++currentSize;
 
     return true;
 }
 
-void traverse(int arr[], int& size) {
+
+
+/**
+ * @brief Searches for a target within an array
+ * 
+ * @param array The array to search within.
+ * @param length The number of elements in the array.
+ * @param target The value to search for.
+ * @return The index of the target if found; -1 otherwise
+ */
+int linearSearch(const int array[], size_t length, int target) {
+    for (size_t index = 0; index < length; ++index) {
+        if (array[index] == target) {
+            return static_cast<int>(index);
+        }
+    }
+    return -1;
+}
+
+
+void traverse(int arr[], size_t& size) {
     for (int index = 0; index < size; ++index) {    
         cout << arr[index] << " ";
     }
@@ -52,12 +86,12 @@ void traverse(int arr[], int& size) {
 
 int main() { 
     int array[10]; 
-    int size = 0;
+    size_t size = 0;
     const int CAPACITY = 10;
 
-    insert(array, size, CAPACITY, 10, 0);
-    insert(array, size, CAPACITY, 55, 1);
-    insert(array, size, CAPACITY, 82, 1);
+    insertIntoArray(array, size, CAPACITY, 10, 0);
+    insertIntoArray(array, size, CAPACITY, 55, 1);
+    insertIntoArray(array, size, CAPACITY, 82, 1);
 
     traverse(array, size);
     
