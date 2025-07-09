@@ -57,8 +57,6 @@ bool insertIntoArray(int array[], size_t& currentSize, size_t capacity, int newV
     return true;
 }
 
-
-
 /**
  * @brief Searches for a target within an array
  * 
@@ -67,14 +65,32 @@ bool insertIntoArray(int array[], size_t& currentSize, size_t capacity, int newV
  * @param target The value to search for.
  * @return The index of the target if found; -1 otherwise
  */
-int linearSearch(const int array[], size_t length, int target) {
-    for (size_t index = 0; index < length; ++index) {
+int linearSearch(const int array[], size_t currentSize, size_t& capacity, int target) {
+    for (size_t index = 0; index < currentSize; ++index) {
         if (array[index] == target) {
             return static_cast<int>(index);
         }
     }
     return -1;
 }
+
+bool removeFromArray(int array[], size_t& currentSize,  size_t& capacity , int target) {
+    // Searching whether element is present.
+    int found = linearSearch(array, currentSize, capacity, target);
+
+    if (found < 0) {
+        return false; // target not found.
+    }
+
+    // remove the target
+    array[found] = array[currentSize-1]; // Copy last element at array[position].
+
+    --currentSize; // Reducing the currentSize; shrinking array 
+
+    return true;
+}
+
+
 
 
 void traverse(int arr[], size_t& size) {
@@ -87,13 +103,22 @@ void traverse(int arr[], size_t& size) {
 int main() { 
     int array[10]; 
     size_t size = 0;
-    const int CAPACITY = 10;
+    size_t CAPACITY = 10;
 
     insertIntoArray(array, size, CAPACITY, 10, 0);
     insertIntoArray(array, size, CAPACITY, 55, 1);
     insertIntoArray(array, size, CAPACITY, 82, 1);
 
     traverse(array, size);
-    
+
+    cout << "Searchinr --- " << "\n";
+    cout << linearSearch(array, size, CAPACITY, 55) << "\n";
+
+    cout << "Removing --- " << "\n";
+    cout << "size is : " << size << endl;
+    cout << removeFromArray(array, size, CAPACITY, 10) << "\n";
+
+    traverse(array, size);
+    cout << "size is : " << size << endl;   
     return 0;
 }
