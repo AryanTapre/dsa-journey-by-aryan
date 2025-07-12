@@ -90,9 +90,6 @@ bool removeFromArray(int array[], size_t& currentSize,  size_t& capacity , int t
     return true;
 }
 
-
-
-
 void traverse(int arr[], size_t& size) {
     for (int index = 0; index < size; ++index) {    
         cout << arr[index] << " ";
