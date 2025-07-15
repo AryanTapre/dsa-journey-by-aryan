@@ -2,37 +2,25 @@
 #include<vector>
 using namespace std; 
 
-
 /**
- * @brief sort Zeros and Onces in Array.
- * 
- * @param v Vector within which sorting needs to perform.
- * @return void just forge / alter into vector v (pass by reference).
+ * @brief Sorts an array consisting of only 0s and 1s.
+ *        Uses two-pointer technique, in-place.
+ *
+ * @param v Reference to the vector to sort.
  */
 void sortZerosOnces(vector<int>& v) {
-    if (v.empty()) {
-        // Invalid condition: vector empty
-        return;
-    }
+    if (v.empty()) return;
 
-    int left = 0;
-    int right = v.size() - 1;
+    size_t left = 0;
+    size_t right = v.size() - 1;
 
     while (left < right) {
-        if (v[left] != 0 && v[right] != 1) {
-            int temp = v[left];
-            v[left] = v[right];
-            v[right] = temp;
+        while (left < right && v[left] == 0) ++left;
+        while (left < right && v[right] == 1) --right;
 
+        if (left < right) {
+            swap(v[left],v[right]);
             ++left;
-            --right;
-        }
-
-        while (v[left] != 1) {
-            ++left;
-        }
-
-        while (v[right] != 0) {
             --right;
         }
     }
