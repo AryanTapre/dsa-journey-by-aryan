@@ -27,7 +27,7 @@ void sortZerosOnces(vector<int>& v) {
 }
 
 int main() { 
-    vector<int> v = {0,1};
+    vector<int> v = {1,0,1,0};
 
     sortZerosOnces(v);
 
