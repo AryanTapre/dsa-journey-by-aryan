@@ -76,8 +76,7 @@ void twoDArrayHeapAllocationNonContiguos()
   array = nullptr;
 }
 
-void twoDArrayHeapAllocationContiguous()
-{
+int* twoDArrayHeapAllocationContiguous() {
   int rows = 2;
   int cols = 2;
 
@@ -101,8 +100,10 @@ void twoDArrayHeapAllocationContiguous()
   }
 
   // Releasing memory
-  delete[] array;
-  array = nullptr;
+  // delete[] array;
+  // array = nullptr;
+
+  return array;
 }
 
 int main()
@@ -110,6 +111,12 @@ int main()
   // arrayStackAllocation();
   // oneDArrayHeapAllocation();
   //twoDArrayHeapAllocationNonContiguos();
-  twoDArrayHeapAllocationContiguous();
+  int* addr = twoDArrayHeapAllocationContiguous();
+
+  cout << addr << " \n";
+
+  cout << "accessing elements...\n";
+  cout << *(addr + (0 * 2 + 0)) << " \n";
+  
   return 0;
 }
