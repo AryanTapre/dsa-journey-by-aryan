@@ -25,6 +25,24 @@ void printRowSum(int* array, const int rows, const int cols) {
     cout << "sum of rows is " << sum << "\n";
 }
 
+
+bool linearSearch(int* array, const size_t rows, const size_t cols, const size_t target ) {
+    if (!array) {
+        // Invalid condtion: array is null, or pointing at undefined address.
+        return false;
+    }
+
+    for (size_t i=0; i<rows; ++i) {
+        for (size_t j=0; j<cols; ++j) {
+            int currentElement = *(array + (i * cols + j));
+
+            if (currentElement == target) return true;
+        }
+    }
+
+    return false;
+}
+
 int main() { 
     // 2D array dimnesions: 3*4
     int seedData[] = {1,2,3,4,5,6,7,8,9,10,11,12};
@@ -43,6 +61,8 @@ int main() {
     }
 
     printRowSum(array, rows, cols);
+
+    cout << "element found : " << linearSearch(array, rows, cols, 90) << "\n";
 
     return 0;
 }
