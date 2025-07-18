@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build-12-transpose-matrix",
+            "type": "shell",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-g",
+                "/media/aryantapre/nvme0n1p7/DATA MANIP/dsa-journey-by-aryan/problems/arrays/13-sort-colors-leetcode75.cpp",
+                "-o",
+                "/media/aryantapre/nvme0n1p7/DATA MANIP/dsa-journey-by-aryan/problems/arrays/a.out"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compile 12-transpose-matrix.cpp for debugging"
+        }
+    ]
+}

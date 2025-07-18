@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug 12-transpose-matrix.cpp",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/media/aryantapre/nvme0n1p7/DATA MANIP/dsa-journey-by-aryan/problems/arrays/a.out",
+
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/problems/arrays",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build-12-transpose-matrix"
+        }
+    ]
+}

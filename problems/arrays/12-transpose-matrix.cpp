@@ -52,7 +52,7 @@ void traverseVector(const vector<vector<int>>& v) {
 int main() { 
     vector<vector<int> > v = {
         {2,4,6},
-        {8,10,12},
+        {8,10,12}, 
         {19,20,16}
     };
 
