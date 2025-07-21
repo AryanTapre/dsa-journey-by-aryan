@@ -7,7 +7,7 @@
             "command": "/usr/bin/g++",
             "args": [
                 "-g",
-                "/media/aryantapre/nvme0n1p7/DATA MANIP/dsa-journey-by-aryan/problems/arrays/13-sort-colors-leetcode75.cpp",
+                "/media/aryantapre/nvme0n1p7/DATA MANIP/dsa-journey-by-aryan/problems/arrays/17-missing-elements.cpp",
                 "-o",
                 "/media/aryantapre/nvme0n1p7/DATA MANIP/dsa-journey-by-aryan/problems/arrays/a.out"
             ],
