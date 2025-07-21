@@ -47,6 +47,12 @@ int findDuplicates(vector<int> nums) {
 
     // No duplicate found.
     return -1;
+
+    // TODO: In Another Words.
+    // while (nums[0] != nums[nums[0]]) {
+    //     swap(nums[0], nums[nums[0]]);
+    // }
+    // return -1;
 }
 
 int main() { 
