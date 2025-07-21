@@ -2,7 +2,7 @@
 #include<vector>
 // #include<bits/stdc++.h>
 using namespace std; 
-    j
+    
 void traverseVector(const vector<int>& v) { 
     for (auto i : v) {
         cout << i << " ";
@@ -19,6 +19,10 @@ int main() {
     v.push_back(90);
     traverseVector(v);
     cout << v.capacity() << " " << v.size() << "\n";
+
+    if (v[0]) {
+        cout << "Hola";
+    }
 
     v.push_back(100);
     cout << v.capacity() << " " << v.size() << "\n"; // Doubled the capacity 
