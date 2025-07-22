@@ -51,5 +51,6 @@ int main() {
 
     cout << "size : " << v.size() << ", capacity : " << v.capacity() << "\n";
 
+    
     return 0;
 }
