@@ -12,7 +12,7 @@ using namespace std;
  * @param arr2 second vector to find in.
  * @param arr3 third vector to find in.
  * 
- * @return vector<int> holding common elements; -1 otherwise.
+ * @return vector<int> holding common elements; -1 ot
  */
 vector<int> commonElements(vector<int> &arr1, vector<int> &arr2, vector<int> &arr3) {
     int i = 0;
