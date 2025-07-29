@@ -1,7 +1,7 @@
 // Find first occurrent index of target element found in array
 
 #include <iostream>
-#include <numsector>
+#include <vector>
 using namespace std; 
 
 /**
@@ -23,7 +23,7 @@ int findFirstOccurrence(const vector<int>& nums, const int target) {
   int firstOccurrenceIndex = -1;
   
   while (low <= high) {
-    int mid = low + (high - low) / 2;
+      int mid = low + (high - low) / 2;
 
     if (nums[mid] == target) {
       firstOccurrenceIndex = mid;
