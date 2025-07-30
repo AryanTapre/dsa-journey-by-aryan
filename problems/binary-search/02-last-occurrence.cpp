@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std; 
 
 /**
@@ -46,5 +47,9 @@ int main() {
   int result = getLastOccurenceIndex(input, target);
   cout << "last occurrence is : " << result << "\n";
 
+  cout << "Using STL upper_bound : ";
+  auto ans = upper_bound(input.begin(), input.end(), target);
+  cout << ans - input.begin() << endl; 
+  
   return 0;
 }

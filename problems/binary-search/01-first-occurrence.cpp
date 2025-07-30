@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
+
 using namespace std; 
 
 /**
@@ -44,6 +46,10 @@ int main() {
 
   int result = findFirstOccurrence(input, 1);
   cout << "First occurrence index : " << result << endl;
+
+  cout << "Using STL: lower_bound : ";
+  auto ans = lower_bound(input.begin(), input.end(), 1);
+  cout << ans - input.begin() << endl;
 
   return 0;
 }
