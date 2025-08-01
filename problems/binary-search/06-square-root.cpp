@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std; 
-
-double squareroot(const int n, int const precision) {
+  
+double squareRoot(const int n, int const precision) {
   int target = n;
   int low = 0;
   int high = n;
@@ -37,7 +37,7 @@ int main() {
   int n = 6;
   int precision = 3;
 
-  cout << "square root is : " << squareroot(n, precision) << endl;
-    
+  cout << "square root is : " << squareRoot(n, precision) << endl;  
+  
   return 0;
 }
