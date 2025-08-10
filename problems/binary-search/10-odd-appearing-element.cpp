@@ -51,7 +51,7 @@ int findOddOccurrence(vector<int>& nums) {
 }
 
 int main() {  
-  vector<int> nums = {1, 1, 2, 2, 3, 3, 4, 4, 3, 600, 600, 4, 4};
+  vector<int> nums = {10,1, 1, 2, 2, 3, 3, 4, 4, 3, 600, 600, 4, 4};
 
   cout << findOddOccurrence(nums) << "\n";
 
