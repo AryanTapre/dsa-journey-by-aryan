@@ -9,7 +9,7 @@ using namespace std;
  * @param v the vector to perfom sort into.
  * @return void just do in-place sorting.
  */
-void sortColors(vector<int>& v) {
+void sortColors(vector<int>& v) { 
     size_t low = 0; // represent Zeros
     size_t medium = 0; // represents Onces
     size_t high = v.size() - 1; // represents Twos
