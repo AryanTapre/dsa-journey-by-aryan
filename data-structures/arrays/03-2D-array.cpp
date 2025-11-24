@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
 
+
+
+
 void arrayStackAllocation()
 {
   int array[][2] = {
