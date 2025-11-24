@@ -16,9 +16,7 @@ int main() {
     vector<double> ans = convertTemperature(celsius);
     for (size_t i = 0; i < ans.size(); i++) {
         cout << ans[i]<< " ";
-    }
-    
-    
+    }    
     return 0;
 }
 
