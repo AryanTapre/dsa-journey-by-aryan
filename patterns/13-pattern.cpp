@@ -1,3 +1,4 @@
+// Flipped Solid diamond
 #include <iostream>
 using namespace std; 
 
