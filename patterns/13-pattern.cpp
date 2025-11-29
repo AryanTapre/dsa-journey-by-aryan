@@ -7,28 +7,38 @@ int main() {
     cout << "enter value of n:";
     cin >> n;
 
-    for (int i = 0; i < n / 2; i++) {
-        for (int j = 0; j < (n/2) - i; j++) {
-            cout << "*";    
+    for (int i = 0; i < n; i++) {
+        // left full pyramid
+        for (int j = 0; j < n - i; j++) {
+            cout << "* ";
         }
+        // middle full spaced pyramid
+        for (int j = 0; j < (2*i)+1; j++) { 
+            cout << "  ";
+        }
+        // right full pyramid
+        for (int j = 0; j < n - i; j++) {
+            cout << "* ";    
+        }
+        
+        cout << endl;    
+    }
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < i + 1; j++) {
+            cout << "* ";        
+        }
+
+        for (int j = 0; j < (2*n) - (2*i) - 1; j++) {
+            cout << "  ";    
+        }
+
+        for (int j = 0; j < i + 1; j++) {
+            cout << "* ";        
+        }
+
         cout << endl;
-    }
-
-    for (int i = 0; i < n / 2; i++) {
-        for (int j = 0; j < 2*i+1; j++) {
-            cout << " ";        
-        }
-        cout << endl;    
-    }
-
-    for (int i = 0; i < n / 2; i++) {
-        for (int j = 0; j < (n/2)-i; j++) {
-            cout << "*";    
-        }
-        cout << endl;    
     }
 
     return 0;
 }
-
-
